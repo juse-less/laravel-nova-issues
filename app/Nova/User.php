@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\TestQueuedAction;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
 use Laravel\Nova\Fields\Gravatar;
@@ -106,6 +107,8 @@ class User extends Resource
      */
     public function actions(NovaRequest $request)
     {
-        return [];
+        return [
+            TestQueuedAction::make(),
+        ];
     }
 }
