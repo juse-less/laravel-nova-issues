@@ -2,8 +2,11 @@
 
 namespace App\Nova;
 
+use App\Nova\Lenses\UsersLens;
+use Carbon\CarbonInterface;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
@@ -49,6 +52,7 @@ class User extends Resource
             Gravatar::make()->maxWidth(50),
 
             Text::make('Name')
+                ->displayUsing(fn (): string => 'Unicorn')
                 ->sortable()
                 ->rules('required', 'max:255'),
 
@@ -62,6 +66,9 @@ class User extends Resource
                 ->onlyOnForms()
                 ->creationRules('required', Rules\Password::defaults())
                 ->updateRules('nullable', Rules\Password::defaults()),
+
+            DateTime::make('Created At')
+                ->displayUsing(fn (CarbonInterface $createdAt): string => $createdAt->toAtomString()),
         ];
     }
 
@@ -95,7 +102,9 @@ class User extends Resource
      */
     public function lenses(NovaRequest $request)
     {
-        return [];
+        return [
+            UsersLens::make(),
+        ];
     }
 
     /**
