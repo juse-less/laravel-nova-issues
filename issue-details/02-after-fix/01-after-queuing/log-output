@@ -1,0 +1,3 @@
+[2022-08-28 18:33:06] local.INFO: Checking Batchable in [App\Nova\Actions\TestQueuedAction::__construct] {"batchId":null,"batching":false,"batch":null,"actionBatchId":null}
+[2022-08-28 18:33:06] local.INFO: Checking Batchable in [App\Nova\Actions\TestQueuedAction::withBatch] {"batchId":null,"batching":false,"batch":null,"actionBatchId":null}
+[2022-08-28 18:33:06] local.INFO: Checking Batchable in [App\Nova\Actions\TestQueuedAction::__construct] {"batchId":null,"batching":false,"batch":null,"actionBatchId":null}

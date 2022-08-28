@@ -1,0 +1,1 @@
+[2022-08-28 18:23:59] local.INFO: Checking Batchable in [App\Nova\Actions\TestQueuedAction::handle] {"batchId":null,"batching":false,"batch":null,"actionBatchId":"9721b8b7-2bd2-46a0-ab8d-5aaff5f1efee"}
