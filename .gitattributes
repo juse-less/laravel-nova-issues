@@ -1,11 +1,10 @@
 * text=auto
 
-*.blade.php diff=html
-*.css diff=css
-*.html diff=html
 *.md diff=markdown
 *.php diff=php
-
-/.github export-ignore
-CHANGELOG.md export-ignore
-.styleci.yml export-ignore
+*.blade.php diff=html
+*.html diff=html
+*.css diff=css
+*.js diff=js
+*.ts diff=ts
+*.vue diff=vue
